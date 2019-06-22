@@ -1,50 +1,5 @@
-/*
- * _mingw.h
- *
- * Mingw specific macros included by ALL include files. 
- *
- * This file is part of the Mingw32 package.
- *
- * Contributors:
- *  Created by Mumit Khan  <khan@xraylith.wisc.edu>
- *
- *  THIS SOFTWARE IS NOT COPYRIGHTED
- *
- *  This source code is offered for use in the public domain. You may
- *  use, modify or distribute it freely.
- *
- *  This code is distributed in the hope that it will be useful but
- *  WITHOUT ANY WARRANTY. ALL WARRANTIES, EXPRESS OR IMPLIED ARE HEREBY
- *  DISCLAIMED. This includes but is not limited to warranties of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- */
-
 #ifndef __MINGW_H
-#define __MINGW_H
-
-/* These are defined by the user (or the compiler)
-   to specify how identifiers are imported from a DLL.
-
-   __DECLSPEC_SUPPORTED    Defined if dllimport attribute is supported.
-   __MINGW_IMPORT          The attribute definition to specify imported
-                           variables/functions. 
-   _CRTIMP                 As above.  For MS compatibility.  
-   __MINGW32_VERSION       Runtime version.
-   __MINGW32_MAJOR_VERSION Runtime major version.
-   __MINGW32_MINOR_VERSION Runtime minor version.
-   __MINGW32_BUILD_DATE    Runtime build date.
-   
-   Other macros:
-
-   __int64                 define to be long long. Using a typedef doesn't
-                           work for "unsigned __int64"
-  
-   All headers should include this first, and then use __DECLSPEC_SUPPORTED
-   to choose between the old ``__imp__name'' style or __MINGW_IMPORT
-   style declarations.  */
-
-/* Try to avoid problems with outdated checks for GCC __attribute__ support.  */ 
+#define __MINGW_H 
 #undef __attribute__
 
 #ifndef __GNUC__
@@ -55,12 +10,10 @@
 #  define _CRTIMP  __declspec(dllimport)
 # endif
 # define __DECLSPEC_SUPPORTED
-# define __attribute__(x) /* nothing */
-#else /* __GNUC__ */
+# define __attribute__(x) 
+#else
 # ifdef __declspec
 #  ifndef __MINGW_IMPORT
-   /* Note the extern. This is needed to work around GCC's
-      limitations in handling dllimport attribute.  */
 #   define __MINGW_IMPORT  extern __attribute__ ((dllimport))
 #  endif
 #  ifndef _CRTIMP
@@ -77,7 +30,7 @@
 #  ifndef _CRTIMP
 #   define _CRTIMP
 #  endif
-# endif /* __declspec */
+# endif 
 # ifndef __cdecl
 #  define __cdecl __attribute__ ((__cdecl__))
 # endif
@@ -102,7 +55,7 @@
 # ifndef __hyper
 #  define __hyper long long
 # endif
-#endif /* __GNUC__ */
+#endif 
 
 #ifdef __cplusplus
 #define __CRT_INLINE inline
@@ -137,7 +90,6 @@
 #endif
 
 #ifndef __MSVCRT_VERSION__
-/*  High byte is the major version, low byte is the minor. */
 # define __MSVCRT_VERSION__ 0x0600
 #endif
 
@@ -145,4 +97,4 @@
 #define __MINGW32_MAJOR_VERSION 3
 #define __MINGW32_MINOR_VERSION 7
 
-#endif /* __MINGW_H */
+#endif
