@@ -1,9 +1,3 @@
-/* 
- * alloc.h --
- *
- *    Interface to malloc and free that provides support for debugging problems
- *    involving overwritten, double freeing memory and loss of memory.
- *
  * Copyright (c) 1991-1994 The Regents of the University of California.
  * Copyright (c) 1994-1997 Sun Microsystems, Inc.
  * Copyright (c) 1998-1999 by Scriptics Corporation.
