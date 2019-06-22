@@ -31,7 +31,7 @@ Requisitos para a reprodução do Jogo:
     - konsole
     - kate
     
-Instruções
+Instruções 
 
 -Compilação/execução:
   `f=GAME; gcc -o ../bin/$f *.c -Wall; ../bin/./$f`
