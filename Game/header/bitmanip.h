@@ -15,4 +15,4 @@
 #define LOBYTE(w)             ((BYTE)(w))
 #define HIBYTE(w)             ((BYTE)(((WORD)(w) >> 8) & 0xFF))
 
-#endif //BITMANIP_H
+#endif 
