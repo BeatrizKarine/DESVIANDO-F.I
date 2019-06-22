@@ -1,7 +1,7 @@
-DESVIANDO DO F.I. 
+# DESVIANDO DO F.I. 
 
  
-
+## Sobre
 O projeto foi baseado no jogo de arcade, chamado Space Invaders, com a junção da rotina do universitário, em especial, estudantes da Universidade Federal de Santa Catarina – CTJ.  
 
 O Game é reproduzido no próprio Terminal do Linux, onde ocorre uma queda de notas e F.I’s, o objetivo é desviar de notas abaixo de 6,0 e dos F.I’s (frequência insuficiente). O usuário será uma figura representando um estudante na parte inferior da tela, utilizando as setas direita/esquerda do teclado movimenta o personagem na horizontal.  
@@ -27,7 +27,7 @@ Em qualquer momento, clique ESC para voltar a tela inicial.
 
  
 
-Requisitos para a reprodução do Jogo: 
+## Requisitos para a reprodução do Jogo: 
 
 Linux  
 
@@ -43,7 +43,7 @@ kate
 
  
 
-Instruções  
+## Instruções  
 
 Compilação/execução: 
 
