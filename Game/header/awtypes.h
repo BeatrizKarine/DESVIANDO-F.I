@@ -1,4 +1,4 @@
-/*  awtypes.h
+/*  
 
 		Definitions for general AWTK data types.
 		NOTE: More specific types are defined in respective AWTK modules.
