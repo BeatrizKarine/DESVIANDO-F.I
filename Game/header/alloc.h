@@ -6,8 +6,6 @@
  *
  * See the file "alloc.c" for information on usage and redistribution
  * of this file, and for a DISCLAIMER OF ALL WARRANTIES.
- * 
- */
 
 #ifndef __ALLOC_H
 #define __ALLOC_H
