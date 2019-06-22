@@ -1,6 +1,6 @@
-DESVIANDO DO F.I. 
+# DESVIANDO DO F.I. 
 
- 
+## Sobre 
 
 O projeto foi baseado no jogo de arcade, chamado Space Invaders, com a junção da rotina do universitário, em especial, estudantes da Universidade Federal de Santa Catarina – CTJ.  
 
@@ -27,7 +27,7 @@ Em qualquer momento, clique ESC para voltar a tela inicial.
 
  
 
-Requisitos para a reprodução do Jogo: 
+## Requisitos para a reprodução do Jogo: 
 
 Linux  
 
@@ -43,7 +43,7 @@ kate
 
  
 
-Instruções  
+## Instruções  
 
 Compilação/execução: 
 
