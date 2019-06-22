@@ -1,4 +1,4 @@
-/*  bitmanip.h
+/* 
 
 		Definitions for bit manipulations.
 
