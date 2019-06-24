@@ -16,4 +16,4 @@
 #define _BITS_TYPES_LOCALE_T_H 1
 #include "__locale_t.h"
 typedef __locale_t locale_t;
-#endif /* bits/types/locale_t.h */
+#endif 
