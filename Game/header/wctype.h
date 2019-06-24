@@ -24,19 +24,15 @@
 #ifndef _WCTYPE_H
 #define _WCTYPE_H
 #pragma GCC system_header
-#include <_mingw.h>
+#include "_mingw.h"
 
 #define	__need_wchar_t
 #define	__need_wint_t
 
 #ifndef RC_INVOKED
 #include "stddef.h"
-#endif	/* Not RC_INVOKED */
+#endif	
 
-/*
- * The following flags are used to tell iswctype and _isctype what character
- * types you are looking for.
- */
 #define	_UPPER		0x0001
 #define	_LOWER		0x0002
 #define	_DIGIT		0x0004
@@ -64,13 +60,13 @@ typedef wchar_t wctype_t;
 #define _WCTYPE_T_DEFINED
 #endif
 
-/* Wide character equivalents - also in ctype.h */
+
 _CRTIMP int __cdecl __MINGW_NOTHROW	iswalnum(wint_t);
 _CRTIMP int __cdecl __MINGW_NOTHROW	iswalpha(wint_t);
 _CRTIMP int __cdecl __MINGW_NOTHROW	iswascii(wint_t);
 _CRTIMP int __cdecl __MINGW_NOTHROW	iswcntrl(wint_t);
 _CRTIMP int __cdecl __MINGW_NOTHROW	iswctype(wint_t, wctype_t);
-_CRTIMP int __cdecl __MINGW_NOTHROW	is_wctype(wint_t, wctype_t);	/* Obsolete! */
+_CRTIMP int __cdecl __MINGW_NOTHROW	is_wctype(wint_t, wctype_t);	
 _CRTIMP int __cdecl __MINGW_NOTHROW	iswdigit(wint_t);
 _CRTIMP int __cdecl __MINGW_NOTHROW	iswgraph(wint_t);
 _CRTIMP int __cdecl __MINGW_NOTHROW	iswlower(wint_t);
@@ -85,15 +81,13 @@ _CRTIMP int __cdecl __MINGW_NOTHROW	iswxdigit(wint_t);
 int __cdecl __MINGW_NOTHROW iswblank (wint_t);
 #endif
 
-/* Older MS docs uses wchar_t for arg and return type, while newer
-   online MS docs say arg is wint_t and return is int.
-   ISO C uses wint_t for both.  */
+
 _CRTIMP wint_t __cdecl __MINGW_NOTHROW	towlower (wint_t);
 _CRTIMP wint_t __cdecl __MINGW_NOTHROW	towupper (wint_t);
 
 _CRTIMP int __cdecl __MINGW_NOTHROW	isleadbyte (int);
 
-/* Also in ctype.h */
+
 
   __MINGW_IMPORT unsigned short _ctype[];
 __MINGW_IMPORT unsigned short* _pctype;
@@ -122,16 +116,11 @@ __CRT_INLINE int __cdecl __MINGW_NOTHROW iswblank (wint_t wc)
   {return (iswctype(wc, _BLANK) || wc == L'\t');}
 #endif
 
-#endif /* !(defined(__NO_CTYPE_INLINES) || defined(__WCTYPE_INLINES_DEFINED)) */
+#endif 
 
 typedef wchar_t wctrans_t;
 
-/* These are resolved by libmingwex.a.  Note, that they are also exported
-   by the MS C++ runtime lib (msvcp60.dll).  The msvcp60.dll implementations
-   of wctrans and towctrans are not C99 compliant in that wctrans("tolower")
-   returns 0, while std specifies that a non-zero value should be returned
-   for a valid string descriptor.  If you want the MS behaviour (and you have
-   msvcp60.dll in your path) add -lmsvcp60 to your command line.  */ 	
+
 
 wint_t __cdecl __MINGW_NOTHROW		towctrans(wint_t, wctrans_t);
 wctrans_t __cdecl __MINGW_NOTHROW	wctrans(const char*);
@@ -141,6 +130,6 @@ wctype_t __cdecl __MINGW_NOTHROW	wctype(const char*);
 }
 #endif
 
-#endif	/* Not RC_INVOKED */
+#endif	
 
-#endif	/* Not _WCTYPE_H */
+#endif	
