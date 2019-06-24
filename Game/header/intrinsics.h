@@ -1,9 +1,4 @@
-/* This is specific fix for a problem with the windows SDK headers when */
-/* using MSVC with an x86 compilation target. On x64 the SDK would enable */
-/* MSVC's _InterlockedSomething compiler intrinsics and use #define to make */
-/* sure those are used instead of InterlockedSomething library calls. On */
-/* x32 it doesn't even though MSVC does support many of those intrinsics. */
-/* Including this header fixes that. */
+
 
 #ifndef _MSVC_INTRINSICS_H
 #define _MSVC_INTRINSICS_H
@@ -14,7 +9,7 @@
 extern "C" {
 #endif
 
-/* Need windows.h for SHORT, LONG, LONG64 etc. */
+
 #include "windows.h"
 
 
@@ -138,7 +133,7 @@ extern "C" {
 #endif
 
 #ifndef InterlockedExchangePointer
-  /* Polyfill for _InterlockedExchangePointer, assumes 32-bit architecture. */
+ 
   __forceinline PVOID _InterlockedExchangePointer(PVOID volatile *Target,
       PVOID Value) {
     return (PVOID) InterlockedExchange((LONG volatile) Target, (LONG) Value);
@@ -147,8 +142,7 @@ extern "C" {
 #endif
 
 #ifndef InterlockedCompareExchangePointer
-  /* Polyfill for _InterlockedCompareExchangePointer, assumes 32-bit */
-  /* architecture. */
+ 
   __forceinline PVOID _InterlockedCompareExchangePointer(
       PVOID volatile *Destination, PVOID Exchange, PVOID Comperand) {
     return (PVOID) InterlockedCompareExchange((LONG volatile*) Destination, (LONG) Exchange, (LONG) Comperand);
@@ -157,9 +151,9 @@ extern "C" {
 #endif
 
 #ifdef __cplusplus
-} // extern "C"
+} 
 #endif
 
 #endif
 
-#endif // _MSVC_INTRINSICS_H
+#endif 
