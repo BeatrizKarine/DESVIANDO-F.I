@@ -48,7 +48,7 @@
 
 #ifdef __USE_BSD
 
-# include <bits/byteswap.h>
+# include "byteswap.h"
 
 # if __BYTE_ORDER == __LITTLE_ENDIAN
 #  define htobe16(x) __bswap_16 (x)
