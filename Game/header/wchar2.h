@@ -233,7 +233,7 @@ __NTH (wcsncat (wchar_t *__restrict __dest, const wchar_t *__restrict __src,
 extern int __swprintf_chk (wchar_t *__restrict __s, size_t __n,
                            int __flag, size_t __s_len,
                            const wchar_t *__restrict __format, ...)
-     __THROW /* __attribute__ ((__format__ (__wprintf__, 5, 6))) */;
+     __THROW ;
 extern int __REDIRECT_NTH_LDBL (__swprintf_alias,
                                 (wchar_t *__restrict __s, size_t __n,
                                  const wchar_t *__restrict __fmt, ...),
@@ -250,7 +250,7 @@ __NTH (swprintf (wchar_t *__restrict __s, size_t __n,
   return __swprintf_alias (__s, __n, __fmt, __va_arg_pack ());
 }
 #elif !defined __cplusplus
-/* XXX We might want to have support in gcc for swprintf.  */
+
 # define swprintf(s, n, ...) \
   (__bos (s) != (size_t) -1 || __USE_FORTIFY_LEVEL > 1                              \
    ? __swprintf_chk (s, n, __USE_FORTIFY_LEVEL - 1,                              \
@@ -261,7 +261,7 @@ extern int __vswprintf_chk (wchar_t *__restrict __s, size_t __n,
                             int __flag, size_t __s_len,
                             const wchar_t *__restrict __format,
                             __gnuc_va_list __arg)
-     __THROW /* __attribute__ ((__format__ (__wprintf__, 5, 0))) */;
+     __THROW ;
 extern int __REDIRECT_NTH_LDBL (__vswprintf_alias,
                                 (wchar_t *__restrict __s, size_t __n,
                                  const wchar_t *__restrict __fmt,
@@ -378,9 +378,7 @@ __fortify_function __wur size_t
 __NTH (wcrtomb (char *__restrict __s, wchar_t __wchar,
                 mbstate_t *__restrict __ps))
 {
-  /* We would have to include <limits.h> to get a definition of MB_LEN_MAX.
-     But this would only disturb the namespace.  So we define our own
-     version here.  */
+
 #define __WCHAR_MB_LEN_MAX        16
 #if defined MB_LEN_MAX && MB_LEN_MAX != __WCHAR_MB_LEN_MAX
 # error "Assumed value of MB_LEN_MAX wrong"
