@@ -10,7 +10,7 @@ O jogo é dividido em 3 fases, P1, P2 e P3. Onde mudando de fase, o nível de di
 
 P1 = Fácil; P2 = Médio; P3 = Difícil. 
 
-Pegando as notas maior ou igual  à 6.0, a nota em questão é somado ao seu score, chamado I.A, obtendo um ranking após o término das fases. 
+Pegando as notas maior ou igual  à 6.0, a nota em questão é somada ao seu score, chamado I.A, obtendo um ranking após o término das fases. 
 
 Caso pegue notas abaixo de 6.0, o Score (I.A) irá diminuir equivalente ao valor que falta para completar a nota mínima. Ex.: Se apanhar a nota 4,0, será diminuído do Score, 2,00. 
 
